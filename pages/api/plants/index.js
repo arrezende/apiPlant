@@ -1,10 +1,10 @@
 import { plants } from '../../../plants'
 
-export default function handler(req, res) {
-  console.log(req.query.page)
+export default function handler({query: {page = 1, limit= 10000}}, res) {
+  console.log(page)
   //&_sort=name&_order=asc&_page=1&_limit=8
-  const page = Number(req.query.page)
-  const limit = Number(req.query.limit)
+ // const page =  (Number(req.query.page) === NaN) ? 1 : Number(req.query.page)
+  //const limit = Number(req.query.limit)
 
   const startIndex = (page - 1 ) * limit
   const endIndex = page * limit
