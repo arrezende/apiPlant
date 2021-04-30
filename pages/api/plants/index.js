@@ -1,8 +1,18 @@
 import { plants } from '../../../plants'
 
 export default function handler(req, res) {
-  console.log(req.query)
+  console.log(req.query.page)
   //&_sort=name&_order=asc&_page=1&_limit=8
-  res.status(200).json(plants.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-  )
+  const page = Number(req.query.page)
+  const limit = Number(req.query.limit)
+
+  const startIndex = (page - 1 ) * limit
+  const endIndex = page * limit
+  console.log(startIndex, endIndex)
+
+  const plantsJSON = JSON.stringify(plants.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)))
+
+  const resultPlants = plants.slice(startIndex, endIndex)
+
+  res.status(200).json(resultPlants)
 }
