@@ -39,7 +39,7 @@ export const plants = [
           "bedroom"
         ],
         "frequency": {
-          "time":3,
+          "times":3,
           repeat_every: "week"
         }
       },
@@ -107,13 +107,13 @@ export const plants = [
         id: 8,
         name: "Orquídea",
         about: "Traz sensação de tranquilidade e paz ao ambiente. Requer pouca manutenção e ótima para quem tem pouco espaço.",
-        water_tips: "Regue moderadamente. Reque 4 vezes na semana.",
+        water_tips: "Regue moderadamente. Regue 4 vezes na semana.",
         photo: "https://storage.googleapis.com/golden-wind/nextlevelweek/05-plantmanager/8.svg",
         environments: [
           "bathroom"
         ],
         "frequency": {
-          "time":4,
+          "times":4,
           repeat_every: "week"
         }
       },
@@ -127,7 +127,7 @@ export const plants = [
           "bathroom"
         ],
         "frequency": {
-          "time":2,
+          "times":2,
           repeat_every: "week"
         }
       },
@@ -141,7 +141,7 @@ export const plants = [
           "bathroom"
         ],
         "frequency": {
-          "time":1,
+          "times":1,
           repeat_every: "day"
         }
       }
